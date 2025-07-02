@@ -16,9 +16,10 @@ import {
 import { Label } from "@/components/ui/label"
 import { Plus, Search, Phone, Mail, AlertTriangle, CheckCircle } from "lucide-react"
 import Link from "next/link"
+import type { Member } from "@/lib/types"
 
 // Mock data - replace with database
-const initialMembers = [
+const initialMembers: Member[] = [
   {
     id: 1,
     name: "John Doe",
@@ -67,7 +68,7 @@ const initialMembers = [
 ]
 
 export default function MembersPage() {
-  const [members, setMembers] = useState(initialMembers)
+  const [members, setMembers] = useState<Member[]>(initialMembers)
   const [searchTerm, setSearchTerm] = useState("")
   const [isAddDialogOpen, setIsAddDialogOpen] = useState(false)
   const [newMember, setNewMember] = useState({ name: "", phone: "", email: "", amount: 75 })
@@ -80,10 +81,10 @@ export default function MembersPage() {
   )
 
   const handleAddMember = () => {
-    const member = {
+    const member: Member = {
       id: members.length + 1,
       ...newMember,
-      status: "active" as const,
+      status: "active",
       lastPayment: new Date().toISOString().split("T")[0],
     }
     setMembers([...members, member])
