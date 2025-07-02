@@ -65,8 +65,9 @@ export function daysSince(date: string | Date): number {
   return diffDays
 }
 
-export function isOverdue(lastPaymentDate: string, daysTolerance = 30): boolean {
-  return daysSince(lastPaymentDate) > daysTolerance
+export function isOverdue(lastPayment?: string, daysTolerance = 30): boolean {
+  if (!lastPayment) return false
+  return daysSince(lastPayment) > daysTolerance
 }
 
 // Utilidades para WhatsApp

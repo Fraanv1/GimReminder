@@ -20,7 +20,7 @@ const initialMembers: Member[] = [
     phone: "+1234567891",
     email: "maria@email.com",
     status: "pending",
-    lastPayment: "2023-12-15",
+    /* lastPayment se omitirá para demostrar opcionalidad */
     amount: 75,
     joinDate: "2023-05-15",
   },
