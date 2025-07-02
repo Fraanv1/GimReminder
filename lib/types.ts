@@ -6,7 +6,8 @@ export interface Member {
   phone: string
   email: string
   status: "active" | "pending" | "suspended"
-  lastPayment: string
+  /** Fecha del último pago (puede estar indefinida en miembros nuevos) */
+  lastPayment?: string
   amount: number
   joinDate?: string
   notes?: string

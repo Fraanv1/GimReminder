@@ -215,7 +215,7 @@ export default function MembersPage() {
                   <div className="flex items-center space-x-4">
                     <div className="text-right">
                       <p className="text-sm font-medium">${member.amount}/month</p>
-                      <p className="text-xs text-muted-foreground">Last payment: {member.lastPayment}</p>
+                      <p className="text-xs text-muted-foreground">Last payment: {member.lastPayment ?? "N/A"}</p>
                     </div>
 
                     <Badge variant={member.status === "active" ? "default" : "destructive"}>
