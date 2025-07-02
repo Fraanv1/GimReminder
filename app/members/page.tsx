@@ -83,7 +83,10 @@ export default function MembersPage() {
   const handleAddMember = () => {
     const member: Member = {
       id: members.length + 1,
-      ...newMember,
+      name: newMember.name,
+      phone: newMember.phone,
+      email: newMember.email,
+      amount: newMember.amount,
       status: "active",
       lastPayment: new Date().toISOString().split("T")[0],
     }
